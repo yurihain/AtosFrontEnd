@@ -1,0 +1,46 @@
+
+
+  <div class="container">
+    <form [formGroup]="CalcularForm" (ngSubmit)="onSubmit()">
+
+
+        <div class="form-group">
+            <label class="form-label">Valor do Investimento:</label> 
+            <input class="form-control" min="0" type="number" id="txt_ValorInvestimento"  formControlName="valorInvestimento" placeholder="Digite o valor do investimento" required>
+            <div *ngIf="f['valorInvestimento'].touched && f['valorInvestimento'].invalid" class="alert alert-danger topSpace5px">
+                <div *ngIf="f['valorInvestimento'].errors && f['valorInvestimento'].errors['required']">Valor do investimento é necessário.</div>
+                <div *ngIf="f['valorInvestimento'].errors">Valor inválido.</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Quantidade de Meses:</label> 
+            <input class="form-control" type="number" id="txt_MesesInvestimento" formControlName="mesesInvestimento" value="10" placeholder="Digite a quantidade de meses do investimento">
+            <div *ngIf="f['mesesInvestimento'].touched && f['mesesInvestimento'].invalid" class="alert alert-danger topSpace5px">
+                <div *ngIf="f['mesesInvestimento'].errors && f['mesesInvestimento'].errors['required']">Meses do investimento é necessário.</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tipo do Investimento:</label> 
+            <select class="form-select" formControlName="tipoInvestimento">
+                        <option value="1" selected>CDB</option>
+                        <option value="2">LCA</option>
+                        <option value="3">LCI</option>
+            </select>  
+        </div>
+        <div class="mb-3"> 
+            <input  class="btn btn-primary mb-3" type = "submit" value = "Calcular" [disabled]="!CalcularForm.valid">
+        </div>
+        <div class="mb-3"> 
+            <label class="form-label">Resultado Bruto:</label> 
+            <input class="form-control" type="text" id="txt_ValorFinal" value="{{ValorFinalBruto}}" disabled>
+        </div>  
+        <div class="mb-3"> 
+            <label class="form-label">Valor Imposto:</label> 
+            <input class="form-control" type="text" id="txt_Imposto" value="{{ValorImposto}}" disabled>
+        </div>  
+        <div class="mb-3"> 
+            <label class="form-label">Resultado Líquido:</label> 
+            <input class="form-control" type="text" id="txt_ValorFinal" value="{{ValorFinalLiquido}}" disabled>
+        </div>  
+    </form>
+</div>
