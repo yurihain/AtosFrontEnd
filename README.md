@@ -1,5 +1,5 @@
-Para executar o frontend abrir em modo solução no VsCode, abrir o terminal e digitar "npm-install" para baixar os módulos necessários do Angular.
-Após o comando "npm-install" finalizar, executar "ng serve"
+Para executar o frontend abrir em modo solução no VsCode, abrir o terminal e digitar "npm install" para baixar os módulos necessários do Angular.
+Após o comando "npm install" finalizar, executar "ng serve"
 
 # AtosFrontEnd
 
